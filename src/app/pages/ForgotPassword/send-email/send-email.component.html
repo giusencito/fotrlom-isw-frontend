@@ -1,0 +1,40 @@
+
+
+<div class="container d-flex justify-content-center">
+
+
+<mat-card>
+
+<form #f="ngForm" (ngSubmit)="onSendEmail()">
+
+  <div class="form-group text-center">
+    <label class="text-info">Te enviaremos un correo para recuperar la contraseña</label>
+    <input type="text" name="mailTo" id="mailTo" class="form-control"
+        [(ngModel)]="mailTo" placeholder="Nombre de Usuario o Email" required>
+</div>
+
+<div class="form-group">
+    <button class="btn btn-outline-success btn-block" [disabled]="!f.valid" type="submit">
+        <i class="fas fa-sign-in-alt"></i> Enviar Correo</button>
+</div>
+
+
+
+</form>
+
+
+
+</mat-card>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>

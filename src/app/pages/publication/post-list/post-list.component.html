@@ -1,0 +1,19 @@
+<style>
+  .center {
+    text-align: center;
+  }
+</style>
+<div class="center">
+  <button mat-raised-button color="primary" (click)="getPosts()">See Posts</button>
+</div>
+<div *ngIf="haveInfo">
+  <div *ngFor="let a of studentData">
+    <br/>
+    
+    <app-post
+      [fullPost]="a"
+    >
+    </app-post>
+    <app-comment-form [postId]="a.id"></app-comment-form>
+  </div>
+</div>

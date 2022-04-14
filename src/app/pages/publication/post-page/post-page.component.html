@@ -1,0 +1,13 @@
+
+
+<div *ngIf="isHidden">
+  <app-fanaticnavigation></app-fanaticnavigation>
+  </div>
+  <div *ngIf="!isHidden">
+    <app-ArtistNavegation></app-ArtistNavegation>
+  </div>
+  <div *ngIf="!isHidden">
+  <app-post-form></app-post-form>
+  </div>
+  <br/>
+  <app-post-list></app-post-list>

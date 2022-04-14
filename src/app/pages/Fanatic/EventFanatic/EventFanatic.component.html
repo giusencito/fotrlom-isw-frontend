@@ -1,0 +1,69 @@
+
+
+<app-fanaticnavigation></app-fanaticnavigation>
+
+<div class ="padding"></div>
+<table>
+  <tr>
+  <td>
+  <div class = "centerbuttons">
+  <button mat-raised-button class = "buttonShow" (click) = "ShowEventsArtist()">Show All Events</button>
+  </div>
+  </td>
+  <td>
+  <div class = "centerbuttons">
+    <button mat-raised-button class = "buttonShow" (click) = "NotShowEventsArtist()">Not Show Events</button>
+  </div>
+  </td>
+  </tr>
+</table>
+<div class ="padding"></div>
+<div *ngIf = "showeventartist">
+<mat-grid-list cols="1" rowHeight="1:0.5">
+  <mat-grid-tile *ngFor ="let arr of arrayevents" class="spaceshort">
+      <mat-card class="example-card-event">
+        <mat-card-header *ngFor ="let arr2 of arrayusers">
+          <div *ngIf = "arr.artist.id == arr2.id">
+            <table class = "table">
+              <tr>
+                <td class = "withoutborder">
+                <div mat-card-avatar class="example-header-image"></div>
+                </td>
+                <td class = "withoutborder">
+                <h1>{{arr2.realname}}</h1>
+                </td>
+                <td class = "withoutborder">
+                <h1>{{arr2.lastname}}</h1>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-card-title><h1>{{arr.eventname}}</h1></mat-card-title>
+          <p>{{arr.eventeescription}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <table>
+            <tr>
+              <td>
+              <div class = "buttonspacer">
+              <button mat-button (click) = "Increasinglikes(arr.id)"><mat-icon aria-label="Example thumb_up icon">
+                  thumb_up
+              </mat-icon></button>
+              <button mat-button (click) = "decreaselikes(arr.id)"><mat-icon aria-label="Example thumb_up icon">
+                thumb_down
+            </mat-icon></button>
+              </div>
+              </td>
+              <td>
+                <div class = "minipadding"></div>
+                <p>{{arr.eventlikes}}</p>
+              </td>
+            </tr>
+          </table>
+        </mat-card-actions>
+      </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+</div>
