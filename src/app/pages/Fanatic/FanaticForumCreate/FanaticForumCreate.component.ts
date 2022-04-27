@@ -57,6 +57,7 @@ AddForum(id:number){
   this.service.create(this.Forum,id).subscribe((response: any) => {
     this.dataSource.data.push( {...response});
     this.dataSource.data = this.dataSource.data.map((o: any) => { return o; });
+    alert("se creo su foro exitosamente")
   },err=>{
     alert("este foro ya existe")
   });

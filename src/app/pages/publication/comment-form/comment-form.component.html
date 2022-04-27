@@ -10,9 +10,9 @@
 <mat-card class="post-form-mat-card">
   <mat-form-field appearance="fill" class="aclass">
     <mat-label>Write something</mat-label>
-    <textarea #txt matInput></textarea>
+    <textarea #txt matInput id="commentpost"></textarea>
   </mat-form-field>
   <mat-card-actions align="end">
-    <button mat-button color="primary" (click)="postComment(txt)">Post Comment</button>
+    <button mat-button color="primary" (click)="postComment(txt)" id="postcomment">Post Comment</button>
   </mat-card-actions>
 </mat-card>

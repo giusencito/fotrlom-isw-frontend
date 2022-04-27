@@ -16,7 +16,7 @@
         <div class ="minipadding"></div>
        
         <input style="display:none" type="file" id="my-file" (change)="onFileChanged($event)">
-        <button mat-button type="button" onclick="document.getElementById('my-file').click()"><mat-icon>add_circle</mat-icon></button>
+        <button mat-button type="button" onclick="document.getElementById('my-file').click()" id="addbutton"><mat-icon>add_circle</mat-icon></button>
         <mat-card-title class = "buttoncenter">{{userdata.realname}}</mat-card-title>
         <div class ="minipadding"></div>
         <mat-card-title class = "buttoncenter">{{userdata.lastname}}</mat-card-title>
@@ -31,7 +31,7 @@
               <button mat-raised-button class = "button">{{arr}}</button>
               <div class = "minipadding"></div>
             </div>
-            <button mat-raised-button class = "button" (click) = "AddGenders()">Add</button>
+            <button mat-raised-button class = "button" (click) = "AddGenders()" id="addgender">Add</button>
             <div class = "minipadding"></div>
             <h2>Link with:</h2>
             <a href="{{facebooklink}}" id="facelink"><button mat-button><mat-icon>facebook</mat-icon></button></a>
@@ -124,25 +124,25 @@
               <h2>Name:</h2>
               <mat-form-field>
                 <input matInput placeholder="Insert new name" name="name" required
-                [(ngModel)]="userdata.realname">
+                [(ngModel)]="userdata.realname" id="inputname">
                 <mat-error>Is required</mat-error>
               </mat-form-field>
               <mat-divider></mat-divider>
               <h2>Lastname:</h2>
               <mat-form-field>
                 <input matInput placeholder="Insert new lastname" name="lastname" required
-                [(ngModel)]="userdata.lastname">
+                [(ngModel)]="userdata.lastname" id="inputlastname">
                 <mat-error>Is required</mat-error>
               </mat-form-field>
               <mat-divider></mat-divider>
               <h2>Email:</h2>
               <mat-form-field>
                 <input matInput placeholder="Insert new email" name="email" required
-                [(ngModel)]="userdata.email">
+                [(ngModel)]="userdata.email" id="inputemail">
                 <mat-error>Is required</mat-error>
               </mat-form-field>
               <mat-divider></mat-divider>
-              <button mat-raised-button class="button" (click) = "updateUser()">Change profile</button>
+              <button mat-raised-button class="button" (click) = "updateUser()" id="buttonchange">Change profile</button>
             </form>
           </td>
         </tr>
