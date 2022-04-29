@@ -18,7 +18,7 @@
 
     <div class="form-group">
 
-      <input  formControlName="username"  [(ngModel)]="user.username" matInput type="Name" class="form-control form-control-lg" id="exampleInputName1" placeholder="Name" required>
+      <input  formControlName="username"  [(ngModel)]="user.username" matInput type="Name" class="form-control form-control-lg" id="exampleInputUserName1" placeholder="Name" required>
       <mat-error  *ngIf="signupform.controls['username'].dirty && signupform.hasError('required','username')">Es requerido</mat-error>
     </div>
 
@@ -45,7 +45,7 @@
       <mat-error  *ngIf="signupform.controls['alias'].dirty && signupform.hasError('required','alias')">Es requerido</mat-error>
     </div>
 
-    <button type="submit"  [disabled]="!signupform.valid" mat-raised-button color="primary" class="but">Register as Fanatic</button>
+    <button type="submit"  [disabled]="!signupform.valid" mat-raised-button color="primary" class="but" id="enter">Register as Fanatic</button>
 
 
 

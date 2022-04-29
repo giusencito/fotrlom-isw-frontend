@@ -47,6 +47,7 @@ export class RegisterFanaticComponent implements OnInit {
 
     this.service.RegisterFanatic(this.user).subscribe((response: any) => {
       this.signupform.reset();
+      alert("cuenta creada")
       this.route.navigate(['/login']);
     },err=>{
       alert("datos ya usados")

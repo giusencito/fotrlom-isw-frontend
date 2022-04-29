@@ -25,7 +25,7 @@ export class SendEmailComponent implements OnInit {
     this.emailPasswordService.sendEmail(this.dto).subscribe(
       data => {
           
-           alert("Email enviado")
+           //alert("Email enviado")
       },
       err => {
         

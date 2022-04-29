@@ -94,11 +94,20 @@ descripcion!:string
   likePost(): void {
     this.fullPost.likes += 1;
     this.postService.update(this.fullPost.id, this.fullPost)
+       
       .subscribe((response: any) => {
         console.log(response);
+        alert("liked")
       });
   }
-
+  dislikePost(): void {
+    this.fullPost.likes -= 1;
+    this.postService.update(this.fullPost.id, this.fullPost)
+      .subscribe((response: any) => {
+        console.log(response);
+        alert("disliked")
+      });
+  }
   getComments(): void {
 
 
@@ -124,6 +133,7 @@ descripcion!:string
     this.report.reportDescription="publicacion inapropiada"
     this.reportService.create(this.report,+this.$route.snapshot.params['id'],this.relatedUser.id)
       .subscribe((response: any) => {
+        alert("reporte enviado")
         console.log(response);
       });
   }

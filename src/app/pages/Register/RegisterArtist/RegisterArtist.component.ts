@@ -60,7 +60,7 @@ export class RegisterArtistComponent implements OnInit {
   registerArtist(){
 
     this.service.RegisterArtist(this.user).subscribe((response: any) => {
-      
+      alert("cuenta creada")
       this.route.navigate(['/login']);
 
 

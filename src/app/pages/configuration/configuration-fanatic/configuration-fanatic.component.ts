@@ -101,7 +101,9 @@ export class ConfigurationFanaticComponent implements OnInit {
   updatepassword() {
     console.log(this.userdata.id);
     this.userService.updatepassword(this.userdata.id, this.userdata).subscribe((response: any) => {
+      alert("password change")
       this.dataSource.data = this.dataSource.data.map((o: Person) => {
+        
         if (o.id === response.id) {
           o = response;
         }

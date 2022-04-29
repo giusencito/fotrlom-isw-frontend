@@ -66,24 +66,24 @@
             <form #UserForm='ngForm'>
               <h2>Past password:</h2>
               <mat-form-field>
-                <input matInput placeholder="Insert past password" name="pastpassword" required>
+                <input matInput placeholder="Insert past password" name="pastpassword" required id="pastpassword">
                 <mat-error>Is required</mat-error>
               </mat-form-field>
               <mat-divider></mat-divider>
               <h2>New password:</h2>
               <mat-form-field>
-                <input matInput placeholder="Insert new password" name="newpassword" required
+                <input matInput placeholder="Insert new password" name="newpassword" required id="newpassword"
                 [(ngModel)]="userdata.password">
                 <mat-error>Is required</mat-error>
               </mat-form-field>
               <mat-divider></mat-divider>
               <h2>Confirm password:</h2>
               <mat-form-field>
-                <input matInput placeholder="Insert new password again" name="newpassword" required>
+                <input matInput placeholder="Insert new password again" name="newpassword" required id="newpasswordagain">
                 <mat-error>Is required</mat-error>
               </mat-form-field>
               <mat-divider></mat-divider>
-              <button mat-raised-button class="button" (click) = "updatepassword()">Change password</button>
+              <button mat-raised-button class="button" (click) = "updatepassword()" id="updatepassword">Change password</button>
             </form>
           </td>
           <td class = "withoutborder">
@@ -92,25 +92,25 @@
               <h2>Name:</h2>
               <mat-form-field>
                 <input matInput placeholder="Insert new name" name="name" required
-                [(ngModel)]="userdata.realname">
+                [(ngModel)]="userdata.realname" id="inputname">
                 <mat-error>Is required</mat-error>
               </mat-form-field>
               <mat-divider></mat-divider>
               <h2>Lastname:</h2>
               <mat-form-field>
                 <input matInput placeholder="Insert new lastname" name="lastname" required
-                [(ngModel)]="userdata.lastname">
+                [(ngModel)]="userdata.lastname" id="inputlastname">
                 <mat-error>Is required</mat-error>
               </mat-form-field>
               <mat-divider></mat-divider>
               <h2>Email:</h2>
               <mat-form-field>
                 <input matInput placeholder="Insert new email" name="email" required
-                [(ngModel)]="userdata.email">
+                [(ngModel)]="userdata.email" id="inputemail">
                 <mat-error>Is required</mat-error>
               </mat-form-field>
               <mat-divider></mat-divider>
-              <button mat-raised-button class="button" (click) = "updateUser()">Change profile</button>
+              <button mat-raised-button class="button" (click) = "updateUser()" id="buttonchange">Change profile</button>
             </form>
           </td>
         </tr>
