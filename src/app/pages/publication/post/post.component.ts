@@ -61,8 +61,6 @@ descripcion!:string
     this.name=this.fullPost.artist.realname;
     this.lastname=this.fullPost.artist.lastname
     this.descripcion=this.fullPost.publicationDescription
-
-
     this.multimediaService.getallmultimediabypublication(this.fullPost.id).subscribe((response:any)=>{
 
         console.log(response.length)

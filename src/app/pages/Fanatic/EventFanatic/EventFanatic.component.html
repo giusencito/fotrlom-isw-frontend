@@ -7,7 +7,7 @@
   <tr>
   <td>
   <div class = "centerbuttons">
-  <button mat-raised-button class = "buttonShow" (click) = "ShowEventsArtist()">Show All Events</button>
+  <button mat-raised-button class = "buttonShow" (click) = "ShowEventsArtist()" id="showeventsfanatic">Show All Events</button>
   </div>
   </td>
   <td>
@@ -48,10 +48,10 @@
             <tr>
               <td>
               <div class = "buttonspacer">
-              <button mat-button (click) = "Increasinglikes(arr.id)"><mat-icon aria-label="Example thumb_up icon">
+              <button mat-button (click) = "Increasinglikes(arr.id)" id="thumbupevent"><mat-icon aria-label="Example thumb_up icon">
                   thumb_up
               </mat-icon></button>
-              <button mat-button (click) = "decreaselikes(arr.id)"><mat-icon aria-label="Example thumb_up icon">
+              <button mat-button (click) = "decreaselikes(arr.id)" id="thumbdownevent"><mat-icon aria-label="Example thumb_up icon">
                 thumb_down
             </mat-icon></button>
               </div>

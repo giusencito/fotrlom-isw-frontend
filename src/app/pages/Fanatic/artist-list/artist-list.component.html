@@ -27,15 +27,15 @@
 
 
 
-              <app-rate [idcomment]="i.id"></app-rate>
+              <app-rate [idcomment]="i.id" id="rateartist"></app-rate>
 
           </div>
             {{i['artistfollowers']}}
-            <a mat-button (click)="follow(i)" target="_blank">
+            <a mat-button (click)="follow(i)" target="_blank" id="followartistasfan">
               <mat-icon>favorite</mat-icon>
               FOLLOW
             </a>
-            <a mat-button (click)="unfollow(i)" target="_blank">
+            <a mat-button (click)="unfollow(i)" target="_blank" id="unfollowartistasfan">
               <mat-icon>favorite</mat-icon>
               UNFOLLOW
             </a>

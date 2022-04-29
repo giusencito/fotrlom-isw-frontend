@@ -47,7 +47,6 @@ export class PostFormComponent implements OnInit {
 
   postPost(txt: HTMLTextAreaElement): void {
 
-
     this.postData.publicationDescription = txt.value;
     this.postData.likes=3
     const tail=Math.random().toString(8).substr(2);
@@ -69,9 +68,6 @@ export class PostFormComponent implements OnInit {
       this.dataSource2.data = this.dataSource.data.map((o: any) => { return o; });
       console.log(this.auxLinks)
       console.log(this.t)
-
-
-
 
 
       if(this.auxLinks.length > 0){

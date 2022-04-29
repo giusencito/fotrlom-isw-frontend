@@ -43,7 +43,7 @@ export class RateComponent implements OnInit {
 
     this.rateservice.create(this.idactualuser,this.idcomment,this.rate).subscribe((response: any) => {
 
-      alert("se agrego un comentario")
+      alert("Se ha calificado al artista")
 
     });
 
