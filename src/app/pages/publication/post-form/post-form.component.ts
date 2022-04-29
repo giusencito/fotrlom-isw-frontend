@@ -13,7 +13,7 @@ import { MultimediaService } from 'src/app/services/multimedia/multimedia.servic
 })
 export class PostFormComponent implements OnInit {
 
-  
+
 
   aux1:any;
   aux2:any;
@@ -35,8 +35,8 @@ export class PostFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllStudents()
-    
-    
+
+
   }
 
   selectedFile!: File;
@@ -47,19 +47,19 @@ export class PostFormComponent implements OnInit {
 
   postPost(txt: HTMLTextAreaElement): void {
 
-    
-    this.postData.publicationdescription = txt.value;
+
+    this.postData.publicationDescription = txt.value;
     this.postData.likes=3
     const tail=Math.random().toString(8).substr(2);
     console.log(tail.length)
-    
-    this.postData.publicationName="ass"
-    
+
+    this.postData.publicationName=tail
+
 
     console.log(this.postData)
 
     this.postService.create(this.postData, +this.$route.snapshot.params['id']).subscribe((response: any) => {
-      
+
       this.dataSource2.data.push( {...response});
       console.log(response.id)
       var publication=response
@@ -69,7 +69,7 @@ export class PostFormComponent implements OnInit {
       this.dataSource2.data = this.dataSource.data.map((o: any) => { return o; });
       console.log(this.auxLinks)
       console.log(this.t)
-      
+
 
 
 
@@ -78,7 +78,7 @@ export class PostFormComponent implements OnInit {
 
         console.log("bbbbbbbbbbbbb")
         for (let i of this.auxLinks){
-            
+
           this.httpClient.post("http://localhost:8080/api/v1/publications/"+response.id+"/multimedias", i, { observe: 'response' })
           .subscribe((response) => {
             if (response.status === 200) {
@@ -91,7 +91,7 @@ export class PostFormComponent implements OnInit {
 
 
 
-            
+
         }
 
       }
@@ -110,7 +110,7 @@ export class PostFormComponent implements OnInit {
       this.dataSource2.data = response.content;
 
 
-    
+
     });
 }
   getLinkFromDialog(txt: HTMLInputElement): void {
@@ -121,7 +121,7 @@ export class PostFormComponent implements OnInit {
   }
 probar(){
   console.log(this.selectedFile);
-    
+
   //FormData API provides methods and properties to allow us easily prepare form data to be sent with POST HTTP requests.
   const uploadImageData = new FormData();
   uploadImageData.append('file', this.selectedFile, this.selectedFile.name);

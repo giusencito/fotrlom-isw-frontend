@@ -14,12 +14,12 @@
 
 <mat-card class="post-form-mat-card">
   <mat-form-field appearance="fill" class="example-full-width">
-    <textarea #txt matInput placeholder="Ex. It makes me feel..."></textarea>
+    <textarea #txt matInput placeholder="Ex. It makes me feel..." id="setPost"></textarea>
   </mat-form-field>
   <mat-card-actions align="end">
-    <button mat-button (click)="multimediaDialog = true"><mat-icon>link</mat-icon></button>
-    <button mat-raised-button color="primary" (click)="postPost(txt)" value="upload">Post</button>
-    
+    <button mat-button (click)="multimediaDialog = true" id="buttonClip"><mat-icon>link</mat-icon></button>
+    <button mat-raised-button color="primary" (click)="postPost(txt)" value="upload" id="buttonPost">Post</button>
+
   </mat-card-actions>
 </mat-card>
 
@@ -32,12 +32,12 @@
       placeholder="Ex. https://content.ext"
       type="text"
     >
-    <input type="file" (change)="onFileChanged($event)">
-    
+    <input type="file" (change)="onFileChanged($event)" id="setimage">
+
     <mat-card-actions align="end">
-      <button mat-button color="primary" (click)="multimediaDialog = false">Close</button>
+      <button mat-button color="primary" (click)="multimediaDialog = false" id="buttonClose">Close</button>
       <button mat-raised-button color="primary"
-              (click)="getLinkFromDialog(txtDialog1); multimediaDialog = false">Append</button>
+              (click)="getLinkFromDialog(txtDialog1); multimediaDialog = false" id="buttonAppend">Append</button>
     </mat-card-actions>
   </mat-card>
 </div>

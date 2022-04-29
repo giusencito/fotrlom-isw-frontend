@@ -30,8 +30,8 @@ export class PostComponent implements OnInit {
   retrieveResonse !: Multimedia;
   relatedUser!: Person;
   postResponse: any;
-  dbImage: any; 
-name!:string 
+  dbImage: any;
+name!:string
 lastname!:string
 descripcion!:string
   @Input()
@@ -57,19 +57,19 @@ descripcion!:string
   }
 
   ngOnInit(): void {
-    
+
     this.name=this.fullPost.artist.realname;
     this.lastname=this.fullPost.artist.lastname
-    this.descripcion=this.fullPost.publicationdescription
+    this.descripcion=this.fullPost.publicationDescription
 
-   
+
     this.multimediaService.getallmultimediabypublication(this.fullPost.id).subscribe((response:any)=>{
 
         console.log(response.length)
          for (var char of response){
           this.dbImage = 'data:image/jpeg;base64,' + char.image
            this.arrayimage.push( this.dbImage)
-           
+
          }
          console.log(this.arrayimage)
 
@@ -77,13 +77,13 @@ descripcion!:string
     })
 
 
-    
+
 
 
     this.usuarioservice.getById(this.fullPost.artist.id)
       .subscribe((response: any) => {
         this.relatedUser = response;
-       
+
       })
   }
 
@@ -102,8 +102,8 @@ descripcion!:string
   }
 
   getComments(): void {
-    
-    
+
+
     this.commentService.getallcommentsbypublication(this.fullPost.id).subscribe((response: any) => {
       this.dataSource.data = response.content;
       console.log(this.dataSource.data)
@@ -111,7 +111,7 @@ descripcion!:string
       //this.haveInfo = true;
       this.havePosts = true;
     });
-    
+
 
 
 

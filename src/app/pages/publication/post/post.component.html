@@ -32,13 +32,13 @@
     <p>
       {{descripcion}}
     </p>
-    
-   
-    
+
+
+
       <div *ngFor="let element of arrayimage">
        <img [src]=element alt="Image from post" class="limited-size">
-       
-      
+
+
       <!-- Debería ir un for cuando se tengan multiples multimedias -->
 
     </div>
@@ -48,7 +48,7 @@
     <button mat-button color="primary" (click)="likePost()">Like ({{fullPost.likes}})</button>
     <button mat-button (click)="getComments()" id="seecomments">See</button>
 
-    <button mat-button (click)="flagPost()">
+    <button mat-button (click)="flagPost()" id="buttonFlagPost">
       <mat-icon>flag</mat-icon>
     </button>
 
@@ -61,7 +61,7 @@
     <div *ngFor="let a of studentData">
       <app-comment
         [customText]="a"
-        
+
       >
       </app-comment>
     </div>

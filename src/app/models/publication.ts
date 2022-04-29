@@ -3,7 +3,7 @@ export interface Publication {
 
       id:number
       publicationName:string;
-      publicationdescription:string;
+      publicationDescription:string;
       likes:number;
       date:Date;
       artist:Artist
