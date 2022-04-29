@@ -4,12 +4,12 @@
   }
 </style>
 <div class="center">
-  <button mat-raised-button color="primary" (click)="getPosts()">See Posts</button>
+  <button mat-raised-button color="primary" (click)="getPosts()" id="seeposts">See Posts</button>
 </div>
 <div *ngIf="haveInfo">
   <div *ngFor="let a of studentData">
     <br/>
-    
+
     <app-post
       [fullPost]="a"
     >
