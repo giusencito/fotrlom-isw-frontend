@@ -105,6 +105,7 @@ export class ForumPageComponent implements OnInit {
     this.report.reportDescription="foro inapropiado"
     this.reportService.create(this.report,+this.route.snapshot.params['id'],id)
       .subscribe((response: any) => {
+        alert("reporte enviado")
         console.log(response);
       });
   }

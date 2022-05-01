@@ -227,6 +227,7 @@ flagPost(id:number) {
   this.report.reportDescription="comentario inapropiada"
   this.reportService.create(this.report,+this.route.snapshot.params['id'],id)
     .subscribe((response: any) => {
+      alert("reporte enviado")
       console.log(response);
     });
 }
