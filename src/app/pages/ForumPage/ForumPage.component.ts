@@ -13,6 +13,7 @@ import { ForumcommentService } from 'src/app/services/forumcomment/forumcomment.
 import { PersonService } from 'src/app/services/person/person.service';
 import { ReportService } from 'src/app/services/report/report.service';
 import { Report } from 'src/app/models/report';
+import { ForumRules } from 'src/app/models/ForumRules';
 
 @Component({
   selector: 'app-ForumPage',
@@ -23,14 +24,17 @@ import { Report } from 'src/app/models/report';
 export class ForumPageComponent implements OnInit {
   isHidden=true
   forum!:Forum
+  ForumRules!:ForumRules
   reportid!:number
   forumname!:string;
   usuario!:Person
   username!:string;
   userlastname!:string
   forumdescription!:string
+  conductrules!:string
   iddepaso!:number
   newcommentform!:FormGroup
+  rules!:FormGroup
   public idforum!:number
   Forumcomment!:Forumcomment
   dataSource1 !:MatTableDataSource<any>;
@@ -41,6 +45,7 @@ export class ForumPageComponent implements OnInit {
     ,private artistService:ArtistService,private fanaticService:FanaticService,private reportService:ReportService) {
    this.forum={}as Forum
    this.usuario={}as Person
+   this.ForumRules={}as ForumRules
    this.Forumcomment={}as Forumcomment
    this.dataSource1 = new MatTableDataSource<any>();
    this.report={}as Report
@@ -66,6 +71,12 @@ export class ForumPageComponent implements OnInit {
 
 
     })
+    this.rules=this.formBuilder.group({
+
+       setrules:[this.conductrules,Validators.required]
+
+
+    })
 
   }
   getidforum(id:number){
@@ -78,6 +89,7 @@ export class ForumPageComponent implements OnInit {
       this.forumname=this.forum.forumname;
       this.reportid=this.forum.person.id
       this.forumdescription=this.forum.forumdescription
+      this.conductrules=this.forum.conductrules
       //console.log(this.forum.user)
       this.getidUser(this.forum.person.id)
 
@@ -110,7 +122,17 @@ export class ForumPageComponent implements OnInit {
       });
   }
 
+  createrules(){
 
+    this.service.update(this.idforum,this.ForumRules)
+    .subscribe((response:any)=>{
+
+
+    })
+
+
+
+  }
 
 
 
@@ -162,7 +184,14 @@ this.newcommentform.reset();
 
 
 }
+Limpiar2(){
 
+  this.rules.reset();
+  
+  
+  
+  }
+  
 
 
 getartists(){
