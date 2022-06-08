@@ -36,6 +36,7 @@ import { RegisterArtistComponent } from './pages/Register/RegisterArtist/Registe
 import { RegisterFanaticComponent } from './pages/Register/RegisterFanatic/RegisterFanatic.component';
 import { SendEmailComponent } from './pages/ForgotPassword/send-email/send-email.component';
 import { DialogOverviewReportDialog } from './pages/publication/post/dialogreport/dialogreport.component';
+import { DialogreportforumComponent } from './pages/ForumPage/dialogreportforum/dialogreportforum.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { DialogOverviewReportDialog } from './pages/publication/post/dialogrepor
     RegisterFanaticComponent,
     SendEmailComponent,
     ChangePasswordComponent,
-    DialogOverviewReportDialog
+    DialogOverviewReportDialog,
+    DialogreportforumComponent
   ],
   imports: [
     BrowserModule,

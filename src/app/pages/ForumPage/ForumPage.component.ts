@@ -13,6 +13,9 @@ import { ForumcommentService } from 'src/app/services/forumcomment/forumcomment.
 import { PersonService } from 'src/app/services/person/person.service';
 import { ReportService } from 'src/app/services/report/report.service';
 import { Report } from 'src/app/models/report';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogreportforumComponent } from './dialogreportforum/dialogreportforum.component';
+
 
 @Component({
   selector: 'app-ForumPage',
@@ -25,6 +28,7 @@ export class ForumPageComponent implements OnInit {
   forum!:Forum
   reportid!:number
   forumname!:string;
+  reportdescriptiondialog!:string;
   usuario!:Person
   username!:string;
   userlastname!:string
@@ -38,7 +42,7 @@ export class ForumPageComponent implements OnInit {
   date!:Date
   report!:Report
   constructor(private service:ForumService,private route:ActivatedRoute,private service2:PersonService,private formBuilder:FormBuilder,private servecommen:ForumcommentService,public datepipe: DatePipe
-    ,private artistService:ArtistService,private fanaticService:FanaticService,private reportService:ReportService) {
+    ,private artistService:ArtistService,private fanaticService:FanaticService,private reportService:ReportService, public dialog:MatDialog) {
    this.forum={}as Forum
    this.usuario={}as Person
    this.Forumcomment={}as Forumcomment
@@ -100,9 +104,26 @@ export class ForumPageComponent implements OnInit {
 
   }
 
-  flagPost(id:number) {
-  
-    this.report.reportDescription="foro inapropiado"
+  openDialog(id:number){
+    console.log(id);
+    const dialogRef = this.dialog.open(DialogreportforumComponent, {
+      width: '500px',
+      data: {reportdescriptiondialog: this.reportdescriptiondialog},
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.reportdescriptiondialog = result;
+      console.log(this.reportdescriptiondialog);
+      if(this.reportdescriptiondialog != null){
+        this.flagPost(id,this.reportdescriptiondialog);
+      }
+    });
+  }
+
+  flagPost(id:number,descriptiondialog:string) {
+    console.log(descriptiondialog);
+    this.report.reportDescription=descriptiondialog
     this.reportService.create(this.report,+this.route.snapshot.params['id'],id)
       .subscribe((response: any) => {
         alert("reporte enviado")
