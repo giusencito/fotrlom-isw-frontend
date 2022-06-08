@@ -35,6 +35,7 @@ import { interceptorProvider } from './interceptors/Interceptor.service';
 import { RegisterArtistComponent } from './pages/Register/RegisterArtist/RegisterArtist.component';
 import { RegisterFanaticComponent } from './pages/Register/RegisterFanatic/RegisterFanatic.component';
 import { SendEmailComponent } from './pages/ForgotPassword/send-email/send-email.component';
+import { DialogOverviewReportDialog } from './pages/publication/post/dialogreport/dialogreport.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { SendEmailComponent } from './pages/ForgotPassword/send-email/send-email
     RegisterArtistComponent,
     RegisterFanaticComponent,
     SendEmailComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    DialogOverviewReportDialog
   ],
   imports: [
     BrowserModule,
