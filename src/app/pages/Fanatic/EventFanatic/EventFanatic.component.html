@@ -64,9 +64,17 @@
           </table>
         </mat-card-actions>
         <mat-card-footer>
-          <a href="{{arr.ticketLink}}" id="tikcetlink"><button mat-button><mat-icon>link</mat-icon></button></a>
+          <div *ngIf="checkislickisinevent(arr.ticketLink)">
+
+            <a href="{{arr.ticketLink}}" id="tikcetlink"><button mat-button><mat-icon>link</mat-icon></button></a>
+
+
+           </div>
+
+         
         </mat-card-footer>
       </mat-card>
   </mat-grid-tile>
 </mat-grid-list>
+
 </div>
