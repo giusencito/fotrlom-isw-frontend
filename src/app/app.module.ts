@@ -37,6 +37,7 @@ import { RegisterFanaticComponent } from './pages/Register/RegisterFanatic/Regis
 import { SendEmailComponent } from './pages/ForgotPassword/send-email/send-email.component';
 import { DialogOverviewReportDialog } from './pages/publication/post/dialogreport/dialogreport.component';
 import { DialogreportforumComponent } from './pages/ForumPage/dialogreportforum/dialogreportforum.component';
+import { DialogreportcommentComponent } from './pages/Fanatic/Fanatic-Forumcomment/dialogreportcomment/dialogreportcomment.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { DialogreportforumComponent } from './pages/ForumPage/dialogreportforum/
     SendEmailComponent,
     ChangePasswordComponent,
     DialogOverviewReportDialog,
-    DialogreportforumComponent
+    DialogreportforumComponent,
+    DialogreportcommentComponent
   ],
   imports: [
     BrowserModule,
